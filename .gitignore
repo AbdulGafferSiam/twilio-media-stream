@@ -15,4 +15,4 @@ node_modules/
 # Files
 package-lock.json
 private-key.json
-ngrok
+ngrok.exe

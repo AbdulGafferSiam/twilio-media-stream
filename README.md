@@ -96,3 +96,25 @@ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/json/private-key.json
 You can set [different language region](https://cloud.google.com/speech-to-text/docs/languages) In order to get live transcription results.
 
 Now Restart your server, load ```localhost:8080``` in your browser then give your Twilio phone number a call and watch your words begin to appear in your browser.
+
+## Clone and Build
+
+git clone < repository_name >
+
+add ngrok.exe file
+
+add GCP service accounts private-key.json file to the repository
+
+./ngrok http 8080
+
+twilio login
+
+set TWILIO_ACCOUNT_SID=your Account SID from twil.io/console
+set TWILIO_AUTH_TOKEN=your Auth Token from twil.io/console
+set GOOGLE_APPLICATION_CREDENTIALS=/path/to/json/private-key.json
+
+twilio phone-numbers:list
+
+twilio phone-numbers:update $TWILIO_NUMBER_SID --voice-url  https://xxxxxxxx.ngrok.io
+
+node index.js
